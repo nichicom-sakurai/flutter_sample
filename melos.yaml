@@ -1,0 +1,83 @@
+name: flutter_sample
+
+packages:
+  - apps/*
+  - packages/**
+
+command:
+  bootstrap:
+    environment:
+      sdk: 3.3.1
+      flutter: 3.19.3
+    dependencies:
+      firebase_core: 2.27.1
+      flutter_riverpod: 2.5.1
+      riverpod: 2.5.1
+      riverpod_annotation: 2.3.5
+    dev_dependencies:
+      build_runner: 2.4.8
+      riverpod_generator: 2.4.0
+
+scripts:
+  analyze:
+    run: |
+      melos exec -- "dart analyze"
+    description: Run analyze.
+    packageFilters:
+      dirExists: lib
+
+  gen:
+    run: |
+      melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+    description: Run build_runner.
+    packageFilters:
+      dependsOn: 'build_runner'
+  gen:l10n:
+    run: |
+      melos exec -c 1 -- "flutter gen-l10n"
+    description: Generate l10n.
+    packageFilters:
+      flutter: true
+      fileExists: 'l10n.yaml'
+
+  fix:
+    run: |
+      melos exec -- "dart fix --apply lib"
+    description: Run dart fix.
+    packageFilters:
+      dirExists: lib
+  fix:check:
+    run: |
+      melos exec -- "dart fix --dry-run lib"
+    description: Check dart fix.
+    packageFilters:
+      dirExists: lib
+
+  format:
+    run: |
+      melos exec -- "dart format lib"
+    description: Run format.
+    packageFilters:
+      dirExists: lib
+  format:check:
+    run: |
+      melos exec -- "dart format lib --dry-run --set-exit-if-changed"
+    description: Check format.
+    packageFilters:
+      dirExists: lib
+
+  test:dart:
+    run: |
+      melos exec -c 10 --fail-fast -- dart test --coverage
+    description: Run dart test.
+    packageFilters:
+      dirExists: test
+      dependsOn: 'test'
+  test:flutter:
+    run: |
+      melos exec -c 10 --fail-fast -- flutter test --coverage
+    description: Run flutter test.
+    packageFilters:
+      flutter: true
+      dirExists: test
+      dependsOn: 'flutter_test'
