@@ -8,6 +8,8 @@ environment:
   flutter: 3.19.3
 
 dependencies:
+  core_model:
+    path: ../../packages/core/model
   flutter:
     sdk: flutter
   cupertino_icons: 1.0.6
