@@ -4,13 +4,39 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+最初に実行する 3ステップ です。
 
-A few resources to get you started if this is your first Flutter project:
+1. [mise CLI](https://mise.jdx.dev/getting-started.html)インストール
+2. ディレクトリにツール追加
+3. [melos](https://melos.invertase.dev/getting-started) アクティベートと実行
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### mise CLI インストール
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+brew install mise
+echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bash_profile
+```
+
+### ディレクトリにツール追加
+
+```bash
+# .tool-versions内のツールをインストール
+mise install
+```
+
+### melos アクティベートと実行
+
+```bash
+dart pub global activate melos
+melos bs
+```
+
+### アプリ実行
+
+VSCodeであれば`F5`デバッグ実行してくださ。
+または、コマンドで実行してください。
+
+```bash
+cd apps/flutter_sample_app && flutter run -d chrome
+```
