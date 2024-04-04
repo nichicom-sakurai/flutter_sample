@@ -15,6 +15,8 @@ final class AppInitializer {
   static BuildConfig initializeBuildConfig() {
     return AppBuildConfig(
       flavor: const String.fromEnvironment('flavor', defaultValue: 'dev'),
+      appName:
+          const String.fromEnvironment('appName', defaultValue: 'Flutter Demo'),
     );
   }
 }

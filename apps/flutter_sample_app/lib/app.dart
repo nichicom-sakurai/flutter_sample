@@ -1,3 +1,4 @@
+import 'package:core_model/build_config.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -6,14 +7,15 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const appName = String.fromEnvironment('appName');
+    final appName = ref.watch(buildConfigProvider).appName;
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Text(appName),
+      home: Text(appName),
     );
   }
 }

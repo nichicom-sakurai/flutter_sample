@@ -10,4 +10,5 @@ BuildConfig buildConfig(BuildConfigRef ref) {
 
 abstract interface class BuildConfig {
   abstract final Flavor flavor;
+  abstract final String appName;
 }
