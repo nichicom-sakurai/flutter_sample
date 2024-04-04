@@ -5,12 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "flutter_sample_dev",
+      "name": "dev",
       "cwd": "apps/flutter_sample_app",
       "program": "lib/main.dart",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "debug"
+      "flutterMode": "debug",
+      "args": ["--dart-define-from-file=lib/dev/dart_defines.json"]
+    },
+    {
+      "name": "stg",
+      "cwd": "apps/flutter_sample_app",
+      "program": "lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "args": ["--dart-define-from-file=lib/stg/dart_defines.json"]
+    },
+    {
+      "name": "dev",
+      "cwd": "apps/flutter_sample_app",
+      "program": "lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "args": ["--dart-define-from-file=lib/prod/dart_defines.json"]
     },
   ]
 }
