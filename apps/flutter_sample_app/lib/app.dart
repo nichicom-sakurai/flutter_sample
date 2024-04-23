@@ -1,5 +1,6 @@
 import 'package:core_model/build_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_app/ui/router/router_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class App extends ConsumerWidget {
@@ -7,15 +8,9 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appName = ref.watch(buildConfigProvider).appName;
-
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Text(appName),
+    return MaterialApp.router(
+      title: ref.watch(buildConfigProvider).appName,
+      routerConfig: ref.watch(routerProvider),
     );
   }
 }
