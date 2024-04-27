@@ -1,4 +1,4 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/core_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_sample_app/dev/firebase_options.dart' as dev;
