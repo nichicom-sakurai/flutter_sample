@@ -1,2 +1,4 @@
-export 'src/build_config/index.dart';
+/// data package
+library core_data;
+
 export 'src/notification_master/index.dart';
