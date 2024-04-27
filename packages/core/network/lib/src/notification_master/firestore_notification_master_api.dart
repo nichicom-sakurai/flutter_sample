@@ -18,7 +18,7 @@ final class FirestoreNotificationMasterApi
 
   final FirebaseFirestore _firestore;
 
-  static const _currentCol = 'notificationMaster';
+  static const _currentCol = 'notificationMasters';
 
   CollectionReference<NetworkNotificationMaster> _colRef() =>
       _firestore.collection(_currentCol).withConverter(
