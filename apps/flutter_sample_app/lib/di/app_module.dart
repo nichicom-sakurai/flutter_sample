@@ -1,5 +1,7 @@
 import 'package:core_model/core_model.dart';
 import 'package:flutter_sample_app/di/network_providers.dart';
+import 'package:flutter_sample_app/di/repository_providers.dart';
+import 'package:flutter_sample_app/di/use_case_providers.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 List<Override> appModule({
@@ -8,4 +10,6 @@ List<Override> appModule({
     [
       buildConfigProvider.overrideWithValue(buildConfig),
       ...networkProviders,
+      ...repositoryProviders,
+      ...useCaseProviders,
     ];
