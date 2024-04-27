@@ -1,5 +1,7 @@
 import 'package:core_model/build_config.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_sample_app/dev/firebase_options.dart' as dev;
 
 import 'app_build_config.dart';
 
@@ -8,6 +10,7 @@ final class AppInitializer {
 
   static Future<BuildConfig> initialize() async {
     final buildConfig = initializeBuildConfig();
+    await initializeFirebase(flavor: buildConfig.flavor);
     return buildConfig;
   }
 
@@ -17,6 +20,18 @@ final class AppInitializer {
       flavor: const String.fromEnvironment('flavor', defaultValue: 'dev'),
       appName:
           const String.fromEnvironment('appName', defaultValue: 'Flutter Demo'),
+    );
+  }
+
+  @visibleForTesting
+  static Future<void> initializeFirebase({required Flavor flavor}) async {
+    await Firebase.initializeApp(
+      options: switch (flavor) {
+        Flavor.dev => dev.DefaultFirebaseOptions.currentPlatform,
+        // NOTE: サンプルのため、dev と同じFirebaseプロジェクトを参照する
+        Flavor.stg => dev.DefaultFirebaseOptions.currentPlatform,
+        Flavor.prod => dev.DefaultFirebaseOptions.currentPlatform,
+      },
     );
   }
 }
