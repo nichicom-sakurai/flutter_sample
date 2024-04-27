@@ -1,4 +1,4 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/core_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'build_config.g.dart';

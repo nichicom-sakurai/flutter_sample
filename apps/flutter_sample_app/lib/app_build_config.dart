@@ -1,4 +1,4 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/core_model.dart';
 
 final class AppBuildConfig implements BuildConfig {
   AppBuildConfig({
