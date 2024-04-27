@@ -1,2 +1,5 @@
 cupertino
+firestore
+flutterfire
+nodoc
 riverpod
