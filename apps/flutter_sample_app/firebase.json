@@ -1,0 +1,14 @@
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/dev/firebase_options.dart": {
+          "projectId": "flutter-sample-dennys",
+          "configurations": {
+            "web": "1:455433735528:web:ee98d7bbed729df1175add"
+          }
+        }
+      }
+    }
+  }
+}

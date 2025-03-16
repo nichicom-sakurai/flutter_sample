@@ -1,4 +1,12 @@
-# melos_managed_dependency_overrides: core_model
+# melos_managed_dependency_overrides: core_model,core_common,core_network,core_data,core_domain
 dependency_overrides:
+  core_common:
+    path: ../../packages/core/common
+  core_data:
+    path: ../../packages/core/data
+  core_domain:
+    path: ../../packages/core/domain
   core_model:
     path: ../../packages/core/model
+  core_network:
+    path: ../../packages/core/network

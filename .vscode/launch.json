@@ -23,13 +23,13 @@
       "args": ["--dart-define-from-file=lib/stg/dart_defines.json"]
     },
     {
-      "name": "dev",
+      "name": "prod",
       "cwd": "apps/flutter_sample_app",
       "program": "lib/main.dart",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
       "args": ["--dart-define-from-file=lib/prod/dart_defines.json"]
-    },
+    }
   ]
 }

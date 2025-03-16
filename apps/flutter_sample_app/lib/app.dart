@@ -1,4 +1,4 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/core_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_app/ui/router/router_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample_app/ui/router/branches/branch_type.dart';
+import 'package:flutter_sample_app/ui/router/branches/notification_page.dart';
 import 'package:flutter_sample_app/ui/router/utils/route_path_name.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,9 +25,6 @@ class NotificationRoute extends GoRouteData {
   const NotificationRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => Scaffold(
-        body: Center(
-          child: Text(BranchType.notification.label),
-        ),
-      );
+  Widget build(BuildContext context, GoRouterState state) =>
+      const NotificationPage();
 }
